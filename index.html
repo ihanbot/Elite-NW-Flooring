@@ -14,45 +14,41 @@
             padding: 0;
             overflow-x: hidden;
             background: #0a0a0a;
-            color: #ffffff;
         }
         .bg-gradient-custom {
             background: radial-gradient(circle at 50% 50%, #1a252f 0%, #0a0a0a 100%);
             position: relative;
-            min-height: 100vh;
         }
         .bg-gradient-custom::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(30, 58, 138, 0.05) 0%, transparent 50%);
             animation: pulse-bg 15s ease-in-out infinite alternate;
             pointer-events: none;
-            z-index: 0; /* Đảm bảo lớp này nằm dưới cùng */
         }
         @keyframes pulse-bg {
             0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 1; }
         }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-15px); }
         }
         @keyframes shine {
             0% { left: -100%; }
-            15% { left: 100%; }
+            20% { left: 100%; }
             100% { left: 100%; }
         }
         .shine-effect {
@@ -66,9 +62,9 @@
             left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
             transform: skewX(-25deg);
-            animation: shine 10s infinite;
+            animation: shine 8s infinite;
         }
     </style>
 <script type="importmap">
@@ -76,13 +72,13 @@
   "imports": {
     "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.462.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
 </head>
-<body class="bg-gradient-custom">
+<body class="bg-gradient-custom text-white min-h-screen">
     <div id="root"></div>
 </body>
 </html>
